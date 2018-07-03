@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="es-ES">
-<head>
-<meta charset="UTF-8">
-<title> This is a different webpage </title>
-<!-- We can also comment -->
-</head>
-<body>
-<img src="google.jpg" alt="Google" width="104" height="142"/>
-<span style="color:blue"> Google logo </span>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title> This is a different webpage </title>
+	<!-- We can also comment -->
+
+		<style>
+			table, tr, td {
+			border:1px solid black;
+			border-collapse: collapse;
+			}
+		</style>
+
+	</head>
+	<body>
+		<img src="google.jpg" alt="Google" width="104" height="142"/>
+		<span style="color:blue"> Google logo </span>
+
+
+		<video width="330" height="250" controls autoplay>
+			 <source src="popcorn.mp4" type="video/mp4">
+			 <source src="popcorn.webm" type="video/webm">
+			 This browser does not support the video tag.
+		</video>
+
+
+		<audio controls>
+			 <source src="birds.wav" type="audio/wav">
+			 <source src="birds.mp3" type="audio/mpeg">
+			 Your browser does not support the audio element.
+		</audio>
+
+
+		<table>
+			<tr>
+				<td colspan = 2 rowspan = 2> a </td>
+				<td colspan = 2> a </td>
+				<td rowspan = 2>b</td>
+			</tr>
+			<tr>
+				<td> c</td>
+				<td rowspan = 1>c</td>
+			</tr>
+		</table>
+
+
+		<table>
+			<tr>
+				<td colspan = 2 rowspan = 2> a </td>
+			</tr>
+			 <tr>
+				 <th>Name</th>
+				 <th>Dog name</th>
+ 				<th>Dog age</th>
+			 </tr>
+			 <!--<canvas id="canvas" width="300" height="300"></canvas>yige hezi daxiao -->
+			 <canvas id="canvas" width="300" height="300"></canvas>
+ 			 <tr>
+
+			 	<td>Caroline</td>
+ 				<td>Lassie</td>
+ 				
+ 			</tr>
+		</table>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/E7NKJFU3YP8" frameborder="0"
+		allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+	</body>
 </html>

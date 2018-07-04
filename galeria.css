@@ -1,15 +1,15 @@
 html,body{
-	width: 50%;
-	height: 50%;
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	background-color: #e5e5e5;
 }
 #container{
-	width: 60%;
+	width: 50%;
 	margin: 0 auto;
-	height: 100%;
-	margin-top: 10px;
+	height: 50%;
+	margin-top: 500px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.3);
 }
 #container>div{
@@ -27,5 +27,8 @@ html,body{
 
 #container > div:hover >img{
 	transform: scale(2,2);
-	transition: transform .2s;
+	transition: transform 1s;
+}
+body{
+	cursor: url("doge.png");
 }

@@ -6,8 +6,8 @@ function square(int_num){
 	return int_num*int_num;
 }
 function even_or_odd(int_num){
-	if(int_num%2==0) return "odd";
-	else return "even";
+	if(int_num%2==0) console.log(odd);
+	else console.log(even);
 }
 function factorial(int_num){
 	var int_fact = 1;

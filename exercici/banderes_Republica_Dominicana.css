@@ -4,18 +4,6 @@ html,body{
 	margin: 0;
 	padding: 0;
 }
-.grid-container {
- display: grid;
- grid-template-columns: auto auto auto;
- padding: 2px;
- background-color: rgb(0,0,0);
-}
-.grid-container div{
- background-color: rgb(255,255,255);
- margin: 5px;
- font-size: 30px;
- text-align: center;
-}
 
 #container{
 	width: 100%;
@@ -27,6 +15,7 @@ html,body{
 #container>div{
 	position: fixed;
 	font: top-left;
+	
 	background: #002d62;
 	width:325px;
 	height: 200px;
@@ -34,7 +23,7 @@ html,body{
 #container>div{
 	position: fixed;
 	font: bottom-right;
-	background: #002d62;
+	background: #002d62;/*blue*/
 	width:325px;
 	height: 200px;
 }
@@ -48,7 +37,7 @@ html,body{
 #container>div{
 	position: fixed;
 	font: top-right;
-	background: #ce1126;
+	background: #ce1126;/*red*/
 	width:325px;
 	height: 200px;
 }

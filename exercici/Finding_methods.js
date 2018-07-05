@@ -6,8 +6,8 @@ function square(int_num){
 	return int_num*int_num;
 }
 function even_or_odd(int_num){
-	if(int_num%2==0) return "odd";
-	else return "even";
+	if(int_num%2==0) console.log(odd);
+	else console.log(even);
 }
 function factorial(int_num){
 	var int_fact = 1;
@@ -33,4 +33,9 @@ function call(int_num){
 }
 function console1(){
 	console.log("1 2 3\n4 5 6\n7 8 9\n10 11 12");
+}
+function zhao(){
+	document.getElementById("first").innerHTML = "First";
+	document.getElementsByclassName("second").innerHTML  = "111";
+	/*document.getElementsByName("TERCER").setAttribute("alt", "Third");*/
 }

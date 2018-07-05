@@ -1,5 +1,4 @@
-<script type="text/javascript">
-window.onload = function () {
-alert('the game');
+var int_square;
+function square(int_square){
+	return int_square*int_square;
 }
-</script>

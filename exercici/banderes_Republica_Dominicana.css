@@ -1,0 +1,41 @@
+html,body{
+	width: 750px;
+	height: 500px;
+	margin: 0;
+	padding: 0;
+}
+#container{
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+	background: white;
+	box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+#container>div{
+	position: fixed;
+	font: top-left;
+	background: #002d62;
+	width:325px;
+	height: 200px;
+}
+#container>div{
+	position: fixed;
+	font: bottom-right;
+	background: #002d62;
+	width:325px;
+	height: 200px;
+}
+#container>div{
+	position: fixed;
+	font: bottom-left;
+	background: #ce1126;
+	width:325px;
+	height: 200px;
+}
+#container>div{
+	position: fixed;
+	font: top-right;
+	background: #ce1126;
+	width:325px;
+	height: 200px;
+}

@@ -36,6 +36,6 @@ function console1(){
 }
 function zhao(){
 	document.getElementById("first").innerHTML = "First";
-	document.getElementsByclassName("second").innerHTML  = "111";
+	/*document.getElementsByclassName("second").innerHTML  = "111";*/
 	/*document.getElementsByName("TERCER").setAttribute("alt", "Third");*/
 }

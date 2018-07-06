@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
-<body>
-<script>
-function myFunction() {
-    setInterval(function(){ alert("Hello"); }, 3000);
-}
-</script>
+var s;
+var m;
+var h;
+s = 0;
+m = 0;
+h = 0;
 
-</body>
-</html>
+function myFunction() {
+	setInterval(plus, 1000);
+}	
+function plus(){
+
+}

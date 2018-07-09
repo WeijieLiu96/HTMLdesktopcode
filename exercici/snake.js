@@ -50,7 +50,9 @@ function drawfruit(newx,newy,size_fruit,color = "black"){
 	ctx.fill();
 }
 
-
+function updatesnake(){
+	
+}
 
 function drawsnake(){
 

@@ -5,6 +5,7 @@ var h;
 s = 0;
 m = 0;
 h = 0;
+var t_input;
 
 function c_myFunction() {
 	setInterval(c_plus, 1000);
@@ -33,15 +34,16 @@ function c_change(){
 }
 
 function img_myFunction() {
-	
-	setInterval(img_change, 500);
+	img_change();
+	setInterval(img_change, 2000);
 }	
 function img_change(){
 	i_switch++;
 	if (i_switch==4) i_switch= 0;
+	var div = document.getElementById("back");
 	if(i_switch == 0) {
-		document.getElementById("imatge").src = "bizhi1.jpg";
+		div.style.background = "url(bizhi2.jpg)";
 	}
-	else if(i_switch == 1) document.getElementById("imatge").src = "bizhi2.jpg";
-	else document.getElementById("imatge").src = "bizhi3.jpg";
+	else if(i_switch == 1) div.style.background= "url(bizhi5.jpg)";
+	else div.style.background= "url(bizhi1.jpg)";
 }

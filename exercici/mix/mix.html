@@ -9,13 +9,28 @@
 	</head>
 	<body>
 		<header id ="back">
-				<img id = "imatge" src="bizhi1.jpg"> </img>
 				<script type="text/javascript">img_myFunction();</script>
 				<span id="clock">
-					<font id="hour">00</font><font >:</font><font  id = "minute">00</font><font >:</font><font  id="second">00</font>
+					<span id="hour">00</span><span >:</span><span  id = "minute">00</span><span >:</span><span  id="second">00</span>
 					<script>c_myFunction()</script>
 				</span>
 		</header>
-			
+		<section>
+			<p>Escribir algo</p>
+			<input type="text" id="hello">
+			<span id="s_text"></span>
+			<br>
+			<input type="submit" value="Submit" id ="b_submit">
+			<script>
+				function $(id){ return document.getElementById(id);}
+				$("b_submit").onclick = function(){
+					$("s_text").innerHTML="Hola"+document.getElementById("hello").value;
+				}
+			</script>
+		</section>
+		<footer id="f_id">
+			<div id = "d_footer">
+			</div>
+		</footer>
 	</body>
 </html>

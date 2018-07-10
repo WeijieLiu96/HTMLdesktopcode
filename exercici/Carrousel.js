@@ -2,7 +2,7 @@ var i_switch = 0;
 
 function myFunction() {
 	
-	setInterval(change, 2000);
+	setInterval(change, 100);
 }	
 function change(){
 	i_switch++;

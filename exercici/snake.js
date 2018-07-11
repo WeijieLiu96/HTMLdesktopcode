@@ -1,30 +1,36 @@
-var snake = [{x:0,y:0}];
+var snake = [{x:0,y:20}];
 var fruit =[{x:150,y:150}];
-var WIDTH = 100;
-var HEIGHT = 100;
+var WIDTH = 50;
+var HEIGHT = 50;
 var ctx;
 var interval;
 var length_snake = 1;
-var d_snake={mov_x=1,mox_y=0};
+var d_snake={mov_x:1,mox_y:0};
 var size = 10;
 var have_fruit = false;
 var DSNAKEX = 10;
 var DSNAKEY = 10;
+var his_snake = [{x:snake[0].x,y:snake[0].y}];
+var i;
+var c_snake;
+var n_snake;
 
 function init(){
 	ctx = document.getElementById("container").getContext("2d");
 	updateFruit();
 	//need interval = setInterval(draw,1);
-	updatesnake();
+	draw(snake[0].x,snake[0].y,size,"black");
+	interval = setInterval(update,1000);
+
 }
 function updateFruit(){
 	if(!have_fruit){
 		parseInt(Math.random()*((WIDTH/size-1)+0),10);
 		var x = fruit[0].x = Math.floor(Math.random()*((WIDTH/size-1)+1)+0);
-		x *=10;
+		fruit[0].x=x *=10;
 		parseInt(Math.random()*((HEIGHT/size-1)+0),10);
 		var y = fruit[0].y = Math.floor(Math.random()*((HEIGHT/size-1)+1)+0);
-		y *=10;
+		fruit[0].y = y *=10;
 		have_fruit = true;
 	}
 	draw(x,y,size,"red");
@@ -32,8 +38,7 @@ function updateFruit(){
 function update(){
 	clear();
 	if(snake[0].x == fruit[0].x && snake[0].y == fruit[0].y){
-		updateFruit();
-		length_snake++;
+		have_fruit=false;
 	}
 	else{
 		draw(fruit[0].x,fruit[0].y,size,"red");
@@ -53,8 +58,41 @@ function draw(x,y,size,color = "black"){
 }
 
 function updatesnake(){
-	var c_snake = snake;
-	draw(snake[0].x,snake[0].y,size,"black");
+	c_snake = {x:snake[0].x,y:snake[0].y};
+	n_snake = {x:snake[0].x,y:snake[0].y};
+	if(d_snake.mov_x!=null)n_snake.x = n_snake.x+d_snake.mov_x*size;
+	if(d_snake.mov_y!=null)n_snake.y = n_snake.y+d_snake.mov_y*size;
+	if(length_snake != 1){
+		for(i = 0; i < length_snake-1; ++i){
+			his_snake[i].x = his_snake[i+1].x;
+			his_snake[i].y = his_snake[i+1].y;
+		}
+		for(i = 0; i < length_snake; ++i){
+			draw(his_snake[i].x,his_snake[i].y,size,"black");
+		}
+	}
+	else if((snake[0].x == fruit[0].x) && (snake[0].y == fruit[0].y)){
+		
+		
+		for(i = 0; i < length_snake-1; ++i){
+			his_snake[i].x = his_snake[i+1].x;
+			his_snake[i].y = his_snake[i+1].y;
+		}
+		length_snake++;
+		snake[0].x = n_snake.x;
+		snake[0].y = n_snake.y;
+		his_snake.push({x:c_snake.x,y:c_snake.y});
+		updateFruit();
+	}
+	else {
+		draw(n_snake.x,n_snake.y,size,"black");
+		snake[0].x = n_snake.x;
+		snake[0].y = n_snake.y;
+		his_snake[0].x = c_snake.x;
+		his_snake[0].y = c_snake.y;
+		draw(snake[0].x,snake[0].y,size,"black");
+	}
+	
 }
 
 /*function draw(){
@@ -88,28 +126,21 @@ function updatesnake(){
 
 window.onload = init;
 window.onkeydown = function(new_event){
-	if(new_event.keycode == 37) {
-		d_snake.left = true;
-		d_snake.right = false;
-		d_snake.top = false;
-		d_snake.bot = false;
+	var code_b=new_event.keycode;
+	if(code_b == 37) {
+		d_snake.mov_x = -1;
+		d_snake.mov_y = 0;
 	}
-	else if(new_event.keycode == 38){
-		d_snake.left = false;
-		d_snake.right = false;
-		d_snake.top = true;
-		d_snake.bot = false;
+	else if(code_b == 38){
+		d_snake.mov_y = 1;
+		d_snake.mov_x = 0;
 	}
-	else if(new_event.keycode == 39){
-		d_snake.left = false;
-		d_snake.right = true;
-		d_snake.top = false;
-		d_snake.bot = false;
+	else if(code_b == 39){
+		d_snake.mov_x = 1;
+		d_snake.mov_y = 0;
 	}
-	else if(new_event.keycode == 40){
-		d_snake.left = false;
-		d_snake.right = false;
-		d_snake.top = false;
-		d_snake.bot = true;
+	else if(code_b == 40){
+		d_snake.mov_y = -1;
+		d_snake.mov_x = 0;
 	}
 }

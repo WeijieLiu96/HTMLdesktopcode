@@ -55,22 +55,12 @@ function updatesnake(){
 	if(d_snake.mov_x!=null)n_snake.x = n_snake.x+d_snake.mov_x*size;
 	if(d_snake.mov_y!=null)n_snake.y = n_snake.y+d_snake.mov_y*size;
 	if((snake.x == fruit.x) && (snake.y == fruit.y)){
-		for(var i = 0; i < length_snake-2; ++i){
-			var aux = {x:his_snake[i+1].x,y:his_snake[i+1].y};
-			his_snake[i].x = aux.x;
-			his_snake[i].y = aux.y;
-		}
-		his_snake[length_snake-1].x = snake.x;
-		his_snake[length_snake-1].y = snake.y;
 		have_fruit = false;
 		length_snake++;
 		his_snake.push({x:n_snake.x,y:n_snake.y});
 		updateFruit();
-		for(i = 0; i < length_snake; ++i){
-			draw(his_snake[i].x,his_snake[i].y,size,"black");
-		}
 	}
-	else if((length_snake != 1)){
+	if((length_snake != 1)){
 		for(var i = 0; i < length_snake-2; ++i){
 			var aux = {x:his_snake[i+1].x,y:his_snake[1].y};
 			his_snake[i].x = aux.x;
@@ -91,7 +81,6 @@ function updatesnake(){
 	}
 	snake.x = n_snake.x;
 	snake.y = n_snake.y;
-	
 }
 
 /*function draw(){

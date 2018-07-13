@@ -1,7 +1,7 @@
 var snake = {x:0,y:20};
 var fruit ={x:150,y:150};
-var WIDTH = 200;
-var HEIGHT = 50;
+var WIDTH = 600;
+var HEIGHT = 600;
 var ctx;
 var interval;
 var length_snake = 1;
@@ -61,10 +61,10 @@ function updatesnake(){
 		updateFruit();
 	}
 	if((length_snake != 1)){
-		for(var i = 0; i < length_snake-2; ++i){
-			var aux = {x:his_snake[i+1].x,y:his_snake[1].y};
-			his_snake[i].x = aux.x;
-			his_snake[i].y = aux.y;
+		for(var i = 0; i < length_snake-1; ++i){
+			var aux = [{x:his_snake[i+1].x,y:his_snake[i+1].y}];
+			his_snake[i].x = aux[0].x;
+			his_snake[i].y = aux[0].y;
 		}
 		his_snake[length_snake-1].x = snake.x;
 		his_snake[length_snake-1].y = snake.y;
@@ -73,44 +73,14 @@ function updatesnake(){
 		}
 	}
 	else {
-		//draw(n_snake.x,n_snake.y,size,"black");
-
 		his_snake[0].x = c_snake.x;
 		his_snake[0].y = c_snake.y;
-		draw(his_snake[0].x,his_snake[0].y,size,"black");
+		draw(snake.x,snake.y,size,"black");
 	}
+	
 	snake.x = n_snake.x;
 	snake.y = n_snake.y;
 }
-
-/*function draw(){
-	clear();
-	for(i = 0; i <position.length;i++){
-		var newx = position[i].x;
-		var newy = position[i].y;
-		var newdy = position[i].dy;
-		var newdx = position[i].dx;
-		var pos = position[i];
-
-		if(newx+r+newdx>WIDTH || newx-r+newdx<0){
-			newdx = -newdx;
-		}
-		if(newy+r+newdy>HEIGHT || newy-r+newdy<0){
-			newdy = -newdy;
-		}
-
-		
-		newx += newdx;
-		newy += newdy;
-
-		position[i].x = newx;
-		position[i].y = newy;
-		position[i].dx = newdx;
-		position[i].dy = newdy;
-		drawball(newx,newy,r,"rgba(10,150,150,.5)");
-	}
-	
-}*/
 
 window.onload = init;
 window.onkeydown = function(new_event){

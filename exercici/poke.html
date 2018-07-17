@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			table{
+				height: 600px;
+				width: 600px;
+			}
+			table, tr, td, th{
+				border-collapse: collapse;	
+				border:2px solid black;
+			}
+			td,th{
+				text-align: center;
+			}
+		
+		</style>
+		<script type="text/javascript" src = "jquery.min.js"></script>
+		<script type="text/javascript" src = "poke.js" ></script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th >Code</th>
+				<th >Normal Sprite</th>
+				<th >Shiny Sprite</th>
+				<th >Name</th>
+				<th >Type</th>
+				<th >HM</th>
+			</tr>
+			<tr>
+				<td id = "code" ></td>
+				<td id = "normal" ></td>
+				<td id = "shiny" ></td>
+				<td id = "name" ></td>
+				<td id ="type" ></td>
+				<td id = "hm"></td>
+			</tr>
+			</tr>
+		</table>
+		<form id ="form">
+			<input value="<" type = "submit" id ="previous">
+			<input type = "text" value = "Write a Pokemon code or name">
+			<input type = "submit" value = "Search">
+			<input value=">" type = "submit" id = "next">
+		</form>
+	</body>
+</html>

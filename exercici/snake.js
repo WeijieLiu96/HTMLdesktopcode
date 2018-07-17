@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 var snake;
 var fruit;
 var WIDTH = 200;
 var HEIGHT = 200;
+=======
+var snake = {x:0,y:20};
+var fruit ={x:150,y:150};
+var WIDTH = 600;
+var HEIGHT = 600;
+>>>>>>> da46991f291730a8f99418a99bc0a14466f90075
 var ctx;
 var interval;
 var length_snake;
@@ -100,9 +107,15 @@ function updatesnake(){
 	}
 	if((length_snake != 1)){
 		for(var i = 0; i < length_snake-1; ++i){
+<<<<<<< HEAD
 			var aux = {x:his_snake[i+1].x,y:his_snake[i+1].y};
 			his_snake[i].x = aux.x;
 			his_snake[i].y = aux.y;
+=======
+			var aux = [{x:his_snake[i+1].x,y:his_snake[i+1].y}];
+			his_snake[i].x = aux[0].x;
+			his_snake[i].y = aux[0].y;
+>>>>>>> da46991f291730a8f99418a99bc0a14466f90075
 		}
 		his_snake[length_snake-1].x = snake.x;
 		his_snake[length_snake-1].y = snake.y;
@@ -111,20 +124,28 @@ function updatesnake(){
 		}
 	}
 	else {
+<<<<<<< HEAD
 		//draw(n_snake.x,n_snake.y,size,"black");
+=======
+>>>>>>> da46991f291730a8f99418a99bc0a14466f90075
 		his_snake[0].x = c_snake.x;
 		his_snake[0].y = c_snake.y;
-		draw(his_snake[0].x,his_snake[0].y,size,"black");
+		draw(snake.x,snake.y,size,"black");
 	}
+	
 	snake.x = n_snake.x;
 	snake.y = n_snake.y;
 	//console.log(his_snake);
 }
 
+<<<<<<< HEAD
 window.onload = function (){
 	
 	init();
 }
+=======
+window.onload = init;
+>>>>>>> da46991f291730a8f99418a99bc0a14466f90075
 window.onkeydown = function(new_event){
 	var code_b=new_event.keyCode;
 	if(code_b == 37) {

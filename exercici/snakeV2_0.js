@@ -1,7 +1,7 @@
 var snake;
 var fruit;
-var WIDTH = 200;
-var HEIGHT = 200;
+var WIDTH = 400;
+var HEIGHT = 400;
 var ctx;
 var interval;
 var length_snake;

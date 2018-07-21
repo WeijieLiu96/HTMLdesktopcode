@@ -42,7 +42,7 @@ function updateFruit(){
 	draw(x,y,size,"red");
 }
 function update(){
-	document.getElementById("socre").innerHTML = socre;
+	
 	clear();
 	draw(fruit.x,fruit.y,size,"red");
 	
@@ -87,15 +87,16 @@ function updatesnake(){
 		} 
 	}
 	if((snake.x == fruit.x) && (snake.y == fruit.y)){
-		have_fruit = false;
-		length_snake++;
-		his_snake.push({x:n_snake.x,y:n_snake.y});
-		updateFruit();
 		socre = socre + plus_socre;
 		if(length_snake <= 30 && length_snake%5==0){
 			speed = speed /2;
 			plus_socre = plus_socre+1;
 		}
+		have_fruit = false;
+		length_snake++;
+		his_snake.push({x:n_snake.x,y:n_snake.y});
+		updateFruit();
+		
 		
 	}
 	if((length_snake != 1)){
@@ -119,6 +120,7 @@ function updatesnake(){
 	snake.x = n_snake.x;
 	snake.y = n_snake.y;
 	//console.log(his_snake);
+	document.getElementById("socre").innerHTML = socre;
 }
 
 window.onload = function (){

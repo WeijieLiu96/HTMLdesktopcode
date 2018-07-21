@@ -2,11 +2,14 @@ body{
 	margin: 0px; 
 	position: relative;
 	background-size: auto;
-	background: #FFF url(background-tu.png) no-repeat center top;
+	background: #FFF url(img/background-tu.png) no-repeat center top;
 	background-attachment: fixed;
 }
 canvas{
 	background: transparent;
+}
+div{
+	border-radius: 10px;
 }
 #d_index{
 	position: fixed;
@@ -28,7 +31,7 @@ canvas{
 	opacity: 0.8;
 	width:100%;
 }
-#d_1>p>span{
+p>span{
 	color:red;
 }
 

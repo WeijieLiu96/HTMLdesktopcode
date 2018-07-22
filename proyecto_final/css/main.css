@@ -1,0 +1,66 @@
+div{
+	border-radius: 10px;
+}
+#d_mhw_bgm{
+	position: fixed;
+	right:5%;
+	width:10%;
+	height:10%;
+}
+#d_index{
+	position: fixed;
+	right: 5%;
+	top:250px;
+	width: 10%;
+	background: #907874;
+	z-index:1;
+	opacity:0.5;
+}
+#d_canvas{
+	position: fixed;
+	right:2%;
+	left: 84.5%;
+	width: 255px;
+	height: 255px;
+	z-index: 1;
+}
+#d_main{
+	position: relative;
+	left: 5%;
+	width:80%;
+	background-color: transparent;
+	opacity: 0.9;
+}
+#d_main>div{
+	background-color: #927a75;
+	opacity: 0.8;
+	width:100%;
+}
+p>span{
+	color:red;
+}
+
+#img_back{
+	margin: 0;
+	z-index: -1;
+	position: fixed;
+	width: auto;
+	height: auto;
+	opacity: 0.9;
+}
+
+#t_title{
+	width: 500px
+	height:30px;
+	background-color: transparent;
+	text-align: center;
+	font-size: 500%;
+	color: black;
+}
+#d_title{
+	text-align: center;
+}
+#mouse_action{
+	z-index: 2;
+	position:absolute;
+}

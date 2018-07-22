@@ -1,0 +1,34 @@
+/*
+Error: Invalid variable: "$zind = 1;".
+        on line 1 of C:\Users\LD\Documents\GitHub\HTMLdesktopcode\caliao\sass\sass.sass
+
+1: $zind = 1;
+2: div{
+3: 	border-radius: 10px;
+4: }
+5: #d_mhw_bgm{
+6: 	position: fixed;
+
+Backtrace:
+C:\Users\LD\Documents\GitHub\HTMLdesktopcode\caliao\sass\sass.sass:1
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:771:in `parse_variable'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:651:in `parse_line'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:540:in `build_tree'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:559:in `block in append_children'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:558:in `each'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:558:in `append_children'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:417:in `_to_tree'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+D:/Program Files (x86)/Koala/bin/sass:22:in `load'
+D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid variable: \"$zind = 1;\".\A         on line 1 of C:\Users\LD\Documents\GitHub\HTMLdesktopcode\caliao\sass\sass.sass\A \A 1: $zind = 1;\A 2: div{\A 3: 	border-radius: 10px;\A 4: }\A 5: #d_mhw_bgm{\A 6: 	position: fixed;"; }

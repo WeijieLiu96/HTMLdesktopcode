@@ -40,15 +40,6 @@ p>span{
 	color:red;
 }
 
-#img_back{
-	margin: 0;
-	z-index: -1;
-	position: fixed;
-	width: auto;
-	height: auto;
-	opacity: 0.9;
-}
-
 #t_title{
 	width: 500px
 	height:30px;

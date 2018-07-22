@@ -1,23 +1,28 @@
-body{
-	margin: 0px; 
-	position: relative;
-	background-size: auto;
-	background: #FFF url(background-tu.png) no-repeat center top;
-	background-attachment: fixed;
-}
-canvas{
-	background: transparent;
-}
 div{
 	border-radius: 10px;
+}
+#d_mhw_bgm{
+	position: fixed;
+	right:5%;
+	width:10%;
+	height:10%;
 }
 #d_index{
 	position: fixed;
 	right: 5%;
-	top:200px;
+	top:250px;
 	width: 10%;
 	background: #907874;
 	z-index:1;
+	opacity:0.5;
+}
+#d_canvas{
+	position: fixed;
+	right:2%;
+	left: 84.5%;
+	width: 255px;
+	height: 255px;
+	z-index: 1;
 }
 #d_main{
 	position: relative;
@@ -43,6 +48,7 @@ p>span{
 	height: auto;
 	opacity: 0.9;
 }
+
 #t_title{
 	width: 500px
 	height:30px;
@@ -53,4 +59,8 @@ p>span{
 }
 #d_title{
 	text-align: center;
+}
+#mouse_action{
+	z-index: 2;
+	position:absolute;
 }

@@ -3,19 +3,28 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Snake</title>
-		<script type ="text/javascript" src="snakeV2_0.js"> </script>
+		<script type="text/javascript">
+		window.onload = function() {
+		         var canvas =document.getElementById("canvas");
+		         var context2D =canvas.getContext("2d");
+		        
+		         var pic = new Image();
+		         pic.src = "red.png";
+		         context2D.drawImage(pic,0,0,200,200);
+		}
+		</script>
 		<style type="text/css">
-			#container{
+			#canvas{
 				border: 5px solid black;
 			}
 		</style>
 	</head>
 	<body>
-		<h1>Score:</h1>
-		<h1 id ="socre">0</h1>
-		<canvas id="container" width="400" height="400"></canvas>
-		<br>
-		<button id="play" style="width: 50px;height: 50px" onclick="init()">Play</button>
-		<button id ="reset" style="width: 50px; height: 50px" onclick="reset()">Reset</button>
+		
+<canvas id="canvas" width="600"height="400">
+         <p>Your browserdoes not support the canvas element!</p>
+</canvas>
+ 
+
 	</body>
 </html>

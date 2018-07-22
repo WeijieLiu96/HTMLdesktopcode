@@ -3,24 +3,41 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>怪物猎人盾斧攻略</title>
-		<script type ="text/javascript" src="main.js"> </script>
-		<link rel="stylesheet" type ="text/css" href="proyecto.css"/>
+		<script type ="text/javascript" src="js/main.js"> </script>
+		<link rel="stylesheet" type ="text/css" href="css/proyecto.css"/>
 	</head>
-	<body onload = "init()" id ="top">
-		<div>
-		<!--<canvas id = "canvas" width = "800px" height = "600px"></canvas>-->
+	<body id ="top" style="
+		background: #FFF url(img/background-tu.png) no-repeat center top;
+		margin: 0px; 
+		position: relative;
+		background-size: auto;
+		background-attachment: fixed;
+		" >
+		<div id="d_mhw_bgm">
+			<audio id = "mhw_bgm" controls="controls" alt="Failed to load music"
+			autoplay="true" loop="true" volume="0.2">
+				<source src="mp3/nergigantebgm.ogg" type="audio/ogg">
+ 				<source src="mp3/nergigantebgm.mp3" type="audio/mpeg">
+			</audio>
+			<br>
+			<button class=volume-button onmousedown=toggleSound();>音乐开关</button>
+			<button class=volumeplus onmousedown=volumplus();>音量+</button>
+			<button class=volumeless onmousedown=volumless();>音量-</button>
+		</div>
+		<div id ="mouse_action">
+			<img src="img/cat.gif" width="100px" height="100px">
 		</div>
 		<div id = "d_index">
 			<ul id = "goto1"><a href="#d_1">盾斧简介和近战武器简介</a></ul>
 			<ul id = "goto2"><a href="#d_2">连招和控制</a></ul>
 			<ul id = "goto3"><a href="#d_3">装备推荐</a></ul>
 			<ul id = "goto4"><a href="#d_4">怪物心得</a></ul>
-			<ul id = "goto5"><a href="#d_5">NPC介绍和实用装备</a></ul>
+			<ul id = "goto5"><a href="#d_5">NPC介绍</a></ul>
 			<ul id = "goto6"><a href="#d_6">外部链接</a></ul>
 			<ul id = "gototop"><a href="#top">返回顶部</a></ul>
 		</div>
 		<div id = d_title>
-			<span id = "t_title" style=color: #0B0B3B;>怪物猎人盾斧攻略</span>
+			<span id = "t_title" >怪物猎人盾斧攻略</span>
 		</div>
 		<div id ="d_main">
 			<div id ="d_1">
@@ -29,7 +46,7 @@
 				</p>
 				<h2>近战武器机制</h2>
 				<h3>武器攻击力</h3>
-				<p>在MHW之中，重新使用了“<span>武器系数</span>”的设定，而不是像前作MHXX一样使用“<span>武器基础攻击力</span>”作为面板武器系数：武器的固有比例，代表的武器一次攻击能制造伤害的强弱能力，会按照一定比例放大武器的基础攻击力数值，但是实际并没有提高武器的攻击力，属于没什么卵用显得很高大上的东西。不同的武器具有不同的系数，<span>测试武器系数的方法为使用攻击力1的护石，看面板增加了多少，然后用增加的部分除以攻击力1级增加的3点攻，可以得到武器系数。
+				<p>在MHW之中，重新使用了“<span>武器系数</span>”的设定，而不是像前作MHXX一样使用“<span>武器基础攻击力</span>”作为面板武器系数：武器的固有比例，代表的武器一次攻击能制造伤害的强弱能力，会按照一定比例放大武器的基础攻击力数值，但是实际并没有提高武器的攻击力，属于没什么卵用显得很高大上的东西。不同的武器具有不同的系数，<span>测试武器系数的方法为使用攻击力1的护石，看面板增加了多少，然后用增加的部分除以攻击力1级增加的3点攻，可以得到武器系数。</span>
 				<p>武器面板攻击力：显示在武器面板上以及人物面板上的攻击力，是基础攻击力被武器系数放大之后的数值，并没有什么卵用。
 				</p>
 				<p>武器基础攻击力：也叫真实攻击力/倍率，武器的实际攻击力，可以通过面板除以武器系数得知，伤害计算的时候以武器基础攻击力为准。</p>
@@ -57,7 +74,7 @@
 				<p>斩味是如何影响弹刀的呢？</p>
 				<p>这里提前介绍一下动作值，动作值就是一个武器一次攻击动作具体到伤害上的一个数值，用来衡量你这个动作“用了多大力气、制造多少伤害”。</p>
 				<p>动作值*斩味系数(就是上面的伤害加成)得到某个数值，然后用这个数值与怪物某个部位隐藏的硬度进行对比，乘积高于部位硬度，那么就不弹刀，反之弹刀。</p>
-				<p>举个例子(这里没实测，随口说了2个数字)，比如棍子前戳15动作值，回旋斩40，蓝斩1.2，怪物硬度30，那么前戳15*1.2=18<30弹刀，40*1.2=48>30不弹。</p>
+				<p>举个例子(这里没实测，随口说了2个数字)，比如棍子前戳15动作值，回旋斩40，蓝斩1.2，怪物硬度30，那么前戳15*1.2=18< 30弹刀，40*1.2=48 >30不弹。</p>
 				<p>特殊情况：心眼技能可以无视硬度，强制不弹刀。</p>
 				<p>特殊情况2：部分武器部分招式附带心眼效果，比如太刀有气情况气刃斩，所有武器的空中攻击等。部分武器部分招式自带提高斩味效果，比如大剑蓄力斩。
 				</p>
@@ -161,6 +178,7 @@
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/KQYa3folynU?start=265" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div id ="d_3">
+				<h2>装备推荐</h2>
 				<p>讲一下本作一些好用的盾斧和技能</p>
 				<p>首先肯定推荐新手使用榴弹瓶的盾斧，因为无视肉质，不用在乎打点，莽就是了，简单易用</p>
 
@@ -171,7 +189,7 @@
 
 				<p>至于其他的强属性瓶盾斧，每个可以都做了一把，飞雷、咸鱼、风飘、雄火，根据不同怪物换不同的属性武器去打，不过效果不甚理想，因为还要找弱点部位，没有榴弹瓶这种无视肉质的爽快~有时候打到不对的部位还会有0这种数字跳出来，估计那个部位是完全不吃属性伤害的。</p>
 				<p>技能推荐炮术和装填数up，炮术会直观的提升能量瓶爆炸的伤害，装填数up会让瓶子变成6瓶，这个技能只能出一级，多一个瓶子就多30秒红盾，多一次超姐的能量瓶爆炸，提升非常直观。至于其他的技能，大家仁者见仁智者见智了，喜欢苟的就出防御性能，喜欢莽的就出攻击，出ko，之前还看到有个大佬出了钝器，仔细想想好像有点道理，钝了不磨刀，反正剑形态有红剑不弹刀，斧形态也就用用超姐，也不弹刀。个人觉得是个不错的思路</p>
-				<a href="#armor_recommend">防具/饰品推荐点这里</a>
+				<a href="http://bbs.ngacn.cc/read.php?tid=13374425&rand=805" target="_blank">防具/饰品推荐点这里</a>
 			</div>
 			<div id = "d_4">
 				<h2>怪物心得</h2>
@@ -199,7 +217,7 @@
 				</ul>
 			</div>
 			<div id = "d_5">
-				<h2>NPC介绍和实用装备</h2>
+				<h2>NPC介绍</h2>
 				<h3>NPC</h3>
 				<span>自己理解的写一下</span>
 				<ul>
@@ -219,15 +237,16 @@
 				<h2>外部链接</h2>
 				<h3>文章摘取自:</h3>
 				<ul>
-					<li><a href="http://bbs.ngacn.cc/read.php?tid=13363594&rand=693"><b>盾斧攻略</b></a></li>
-					<li><a href="https://bbs.ngacn.cc/read.php?tid=13377685&rand=159"><b>近战武器详解</b></a></li>
+					<li><a href="http://bbs.ngacn.cc/read.php?tid=13363594&rand=693" target="_blank"><b>盾斧攻略</b></a></li>
+					<li><a href="https://bbs.ngacn.cc/read.php?tid=13377685&rand=159" target="_blank"><b>近战武器详解</b></a></li>
 				</ul>
 				<h3>实用链接</h3>
 				<ul>
-					<li><a href="http://bbs.ngacn.cc/read.php?tid=13374425&rand=805"><b>盾斧配装攻略</b></a></li>
-					<li><a href="http://www.monsterhunterworld.com/hk/"><b>怪物猎人世界官网(香港,繁体)</b></a></li>
+					<li><a href="http://bbs.ngacn.cc/read.php?tid=13374425&rand=805" target="_blank"><b>盾斧配装攻略</b></a></li>
+					<li><a href="http://www.monsterhunterworld.com/hk/" target="_blank"><b>怪物猎人世界官网(香港,繁体)</b></a></li>
 				</ul>
 			</div>
 		</div>
+
 	</body>
 </html>
